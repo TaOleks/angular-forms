@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -8,11 +8,14 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-myForm:FormGroup=new FormGroup({
- name:new FormControl('Oleksii'),
-  age:new FormControl(''),
-  profession:new FormControl('')
-})
+  myForm!:FormGroup
+constructor(private formBuilder:FormBuilder){
+  this.myForm = this.formBuilder.group({
+    name:[''],
+    age:['38'],
+    profession:['']
+  })
+}
 submitForm(){
 console.log(this.myForm)
 }
