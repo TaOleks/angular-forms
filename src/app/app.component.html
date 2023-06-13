@@ -1,9 +1,9 @@
 <div>
-  <form #myForm="ngForm" (ngSubmit)="submitForm()">
-    <div>Name:<input name="name" ngModel></div>
-    <div>Age:<input name="age" ngModel></div>
-    <div>Profession<input name="profession" ngModel></div>
+  <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <div>Name:<input formControlName="name"></div>
+    <div>Age:<input formControlName="age"></div>
+    <div>Profession<input formControlName="profession"></div>
     <button type="submit">Send</button>
-    <!-- <button (click)="myForm.reset()">Clean</button> -->
+
   </form>
 </div>

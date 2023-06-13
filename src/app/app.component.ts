@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,12 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  @ViewChild('myForm') form!:NgForm
+myForm:FormGroup=new FormGroup({
+ name:new FormControl('Oleksii'),
+  age:new FormControl(''),
+  profession:new FormControl('')
+})
 submitForm(){
-  console.log(this.form.value)
-  this.form.reset()
+console.log(this.myForm)
 }
 }
