@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -8,15 +8,12 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  myForm!:FormGroup
-constructor(private formBuilder:FormBuilder){
-  this.myForm = this.formBuilder.group({
-    name:[''],
-    age:['38'],
-    profession:['']
-  })
-}
+myForm:FormGroup=new FormGroup({
+ name:new FormControl('Oleksii'),
+  age:new FormControl('', [Validators.required, Validators.pattern(/^[0-9]+$/)]),
+  profession:new FormControl('')
+})
 submitForm(){
-console.log(this.myForm)
+console.log(this.myForm.status)
 }
 }
