@@ -1,10 +1,10 @@
 <div>
-  <form [formGroup]="myForm" (ngSubmit)="submitForm()">
-    <div>Name:<input formControlName="name"></div>
-    <div *ngIf="myForm.invalid && myForm.touched" style="color:brown">Must be a number</div>
-    <div>Age:<input formControlName="age"></div>
-    <div>Profession<input formControlName="profession"></div>
-    <button [disabled]="myForm.invalid" type="submit">Send</button>
+  <form #f="ngForm" (ngSubmit)="submitForm(f)">
+    <div>Name:<input name="name" ngModel ></div>
+    <div *ngIf="f.invalid && f.touched" style="color:brown">Must be a number</div>
+    <div>Age:<input name="age"  required pattern="^[0-9]+$" ngModel></div>
+    <div>Profession<input name="profession" ngModel></div>
+    <button [disabled]="f.invalid" type="submit">Send</button>
 
   </form>
 </div>
