@@ -21,7 +21,9 @@
         <tbody *ngFor="let item of localItems">
           <tr>
             <td title="Category" >
-              <input [ngClass]="{'has-error':Category.invalid}" type="text" class="form-control" name="cat{{item.id}}" #Category="ngModel" ngModel required>
+              <input [ngClass]="{'has-error':Category.invalid}"
+              type="text" class="form-control" name="cat{{item.id}}"
+               #Category="ngModel" [(ngModel)]="item.name" required>
             </td>
             <td colspan="5"></td>
             <td title="Add Item / Remove Category">
@@ -29,6 +31,14 @@
               <button  class="btn btn-danger">Remove Category</button>
             </td>
 
+          </tr>
+          <tr *ngFor="let items of item['items']">
+            <td></td>
+            <td title="item" >
+              <input [ngClass]="{'has-error':item.invalid}"
+              type="text" class="form-control" type="text" name="item{{items.id}}"
+              #item="ngModel" [(ngModel)]="items.name" required >
+            </td>
           </tr>
         </tbody>
         <tfoot></tfoot>

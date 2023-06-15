@@ -20,10 +20,10 @@ export class AppComponent {
 
   localItems = [
     {id:1,
-    name:'',
+    name:'Category 1',
     items:[{
       id:1,
-      name:'',
+      name:'Item1',
       glCode:null,
       amount:null,
       salesTax:null
