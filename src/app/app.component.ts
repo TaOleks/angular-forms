@@ -8,12 +8,30 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-// myForm:FormGroup=new FormGroup({
-//  name:new FormControl('Oleksii'),
-//   age:new FormControl('', [Validators.required, Validators.pattern(/^[0-9]+$/)]),
-//   profession:new FormControl('')
-// })
-submitForm(f:NgForm){
-console.log(f)
+
+  itemsTitles=[
+    'Category',
+    'Items',
+    'Gl Code',
+    'Amount',
+    'Sales Tax',
+    'Total'
+  ]
+
+  localItems = [
+    {id:1,
+    name:'',
+    items:[{
+      id:1,
+      name:'',
+      glCode:null,
+      amount:null,
+      salesTax:null
+    }]
+  }
+  ]
+
+submitForm(myForm:NgForm){
+console.log(myForm)
 }
 }
