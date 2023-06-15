@@ -39,6 +39,20 @@
               type="text" class="form-control" type="text" name="item{{items.id}}"
               #item="ngModel" [(ngModel)]="items.name" required >
             </td>
+            <td title="Gl Code" >
+              <input [ngClass]="{'has-error':glCode.invalid}"
+              type="text" class="form-control" type="text" name="glCode{{items.glCode}}"
+              #glCode="ngModel" [(ngModel)]="items.glCode" required  pattern="^[0-9]+$">
+            </td>
+            <td title="Amount" >
+              <input [ngClass]="{'has-error':amount.invalid}"
+              type="text" class="form-control" type="text" name="amount{{items.amount}}"
+              #amount="ngModel" [(ngModel)]="items.amount" required pattern="^[0-9]+$">
+            </td>
+            <td title="Sales Tax" >
+
+            </td>
+
           </tr>
         </tbody>
         <tfoot></tfoot>
